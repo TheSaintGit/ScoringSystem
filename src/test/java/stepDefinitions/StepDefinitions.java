@@ -1,4 +1,4 @@
-package stepdefinitions;
+package stepDefinitions;
 
 
 import io.cucumber.java.en.Given;
@@ -39,7 +39,5 @@ public class StepDefinitions {
             System.out.println("your score was " + result +" point´s");
 
     }
-
-
     }
 

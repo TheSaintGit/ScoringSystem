@@ -11,8 +11,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.*;
 import java.util.Iterator;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.Assert.assertEquals;
 
 public class ExcelSteps {
 
@@ -75,6 +75,8 @@ public class ExcelSteps {
                 //Get first/desired sheet from the workbook
                 XSSFSheet sheet = workbook.getSheetAt(0);
 
+
+
                 //Iterate through each rows one by one
                 Iterator<Row> rowIterator = sheet.iterator();
                 while (rowIterator.hasNext())
@@ -88,10 +90,11 @@ public class ExcelSteps {
                         Cell cell = cellIterator.next();
                         //Check the cell type after eveluating formulae
                         //If it is formula cell, it will be evaluated otherwise no change will happen
+
                         System.out.print(cell.getStringCellValue() + " ");
                         // System.out.print(cell.getNumericCellValue() + "tt");
-
-                       /* switch (evaluator.evaluateInCell(cell).getCellType())
+                        /*
+                        switch (evaluator.evaluateInCell(cell).getCellType())
                         {
                             case Cell.CELL_TYPE_NUMERIC:
                                 System.out.print(cell.getNumericCellValue() + "tt");
@@ -103,18 +106,23 @@ public class ExcelSteps {
                                 //Not again
                                 break;
                         }
-                        */
+
+
+                         */
 
                     }
                     System.out.println("");
                 }
                 file.close();
+
             }
+
             catch (Exception e)
             {
-                e.printStackTrace();
+              e.printStackTrace();
             }
-        //assertEquals(String.valueOf(int1), String.valueOf(value));
+
+      // assertEquals(String.valueOf(int1), String.valueOf(value));
         }
 
 }

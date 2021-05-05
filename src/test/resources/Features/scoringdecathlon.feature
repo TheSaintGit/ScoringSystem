@@ -1,5 +1,5 @@
-Feature: Score for 100m
-  I want set result on 100m and get my points.
+Feature: Score for different events Decathlon
+  I want pica an event and set result on that to get my points.
 
 
   Scenario: Add a result get points

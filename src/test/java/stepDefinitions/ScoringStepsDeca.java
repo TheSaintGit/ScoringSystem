@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ScoringSteps {
+public class ScoringStepsDeca {
     double p = 0;
     double a = 0;
     double b = 0;

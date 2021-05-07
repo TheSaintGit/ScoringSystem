@@ -1,12 +1,18 @@
 package scoringSystem;
+import io.cucumber.messages.internal.com.google.protobuf.StringValue;
+import io.cucumber.messages.internal.com.google.protobuf.Value;
+
+import java.lang.reflect.Array;
 import java.util.Scanner;
 public class Main {
+   static NameSaver nameSaver = new NameSaver();
+
         public static void main(String[] args) {
             Scanner scan = new Scanner(System.in);
 
             boolean Notquit = true;
             while (Notquit) {
-                NameSaver nameSaver = new NameSaver();
+
                 System.out.println("Main Menu. Make a choise, ");
                 System.out.println("Press:");
                 System.out.println("1: start a new contest");
@@ -21,7 +27,7 @@ public class Main {
                     System.out.println("make a choise:");
                     System.out.println("press");
                     System.out.println("1: Decathlon");
-                    System.out.println("2:Hepathlon");
+                    System.out.println("2: Hepathlon");
                     System.out.println("3: Back to main menu");
 
                     int valMeny2 = scan.nextInt();
@@ -45,8 +51,10 @@ public class Main {
                             nameSaver.setName(i, name);
 
                             //poäng  för alla deltagare
-                            System.out.println("Write scores for your participants");
+                             //System.out.println("Write scores for your participants");
+                            setscore();
                         }
+
                     } else if (valMeny2 == 2) {
 
                         System.out.println("Name your contest");
@@ -86,5 +94,16 @@ public class Main {
                 }
             }
         }
+
+    private static void setscore() {
+        String[][] Scorecard =new String[2][2];
+            Scorecard[1][1]=nameSaver.getNames();
+        for(int i=0; i<2; i++) {
+            for (int j = 0; j < 2; j++) {
+                System.out.print("| " + Scorecard[i][j] + "| ");
+            }
+            System.out.println("   ");
+        }
     }
+}
 

@@ -1,8 +1,10 @@
 package scoringSystem;
 
+import java.security.PrivateKey;
+
 public class NameSaver {
 
-        private String[] Athlets;
+        private  String[] athlets;
         private String contest;
         public void SetContest (String ContestName){
             contest=ContestName;}
@@ -14,20 +16,20 @@ public class NameSaver {
                 NumberOfAthlets=40;
 
             }
-            Athlets = new String[NumberOfAthlets];
+            athlets = new String[NumberOfAthlets];
         }
 
         public void setName(int place, String atheltesName) {
 
-            Athlets[place] = atheltesName;
+            athlets[place] = atheltesName;
         }
 
 
 
 
 
-        public String [] getNames() {
+        public String getNames() {
 
-            return Athlets;
+            return athlets;
         }
     }
